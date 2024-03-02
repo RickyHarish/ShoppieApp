@@ -57,9 +57,10 @@ const ProductListScreen = () => {
     } else {
       dispatch(listProducts('', currentPageNumber))
     }
+
+    // eslint-disable-next-line
   }, [
     dispatch,
-    history,
     userInfo,
     successDelete,
     successCreate,
@@ -115,7 +116,7 @@ const ProductListScreen = () => {
                 <tr key={product._id}>
                   <td>{product._id}</td>
                   <td>{product.name}</td>
-                  <td>${product.price}</td>
+                  <td>{`\u20B9 `}{product.price}</td>
                   <td>{product.category}</td>
                   <td>{product.brand}</td>
                   <td>
