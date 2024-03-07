@@ -10,6 +10,7 @@ import Loader from '../components/Loader'
 import {listProductDetails, updateProduct} from '../actions/productActions'
 import FormContainer from '../components/FormContainer'
 import { PRODUCT_UPDATE_RESET } from '../constants/productConstants'
+import Meta from '../components/Meta'
 
 const ProductEditScreen = () => {
     const {id} = useParams()
@@ -99,6 +100,7 @@ const ProductEditScreen = () => {
 
   return (
     <>
+    <Meta title='Edit Product' />
     <Link to='/admin/productlist' className='btn btn-light my-3'>
         Go Back
     </Link>
@@ -124,11 +126,15 @@ const ProductEditScreen = () => {
         <Form.Label>Image</Form.Label>
             <Form.Control type='text' placeholder='Enter image URL' value={image} onChange={(e)=>setImage(e.target.value)}>
             </Form.Control>
-            <Form.File 
+            {/* <Form.File 
                 id='image-file' 
                 label='Choose File' 
                 custom onChange={uploadFileHandler}
-            ></Form.File>
+            ></Form.File> */}
+            <>
+            <label className='image-upload' htmlFor='image-file'>Choose File</label>
+            <input style={{display:'none'}} type="file" id="image-file" onChange={uploadFileHandler} />
+            </>
         {uploading && <Loader/>}
         </Form.Group>
         <Form.Group controlId='brand'>

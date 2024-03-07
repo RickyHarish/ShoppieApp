@@ -6,6 +6,7 @@ import Message from '../components/Message'
 // import Loader from '../components/Loader'
 import { addToCart, removeFromCart } from '../actions/cartActions'
 import { Row, Col, ListGroup, Image, Form, Button, Card } from 'react-bootstrap'
+import Meta from '../components/Meta'
 
 const CartScreen = ({match}) => {
     const {id} = useParams()
@@ -39,6 +40,8 @@ const CartScreen = ({match}) => {
     }
 
   return (
+    <>
+    <Meta title='Shopping Cart'/>
     <Row>
       <Col md={8}>
           <h1>Shopping Cart</h1>
@@ -95,6 +98,7 @@ const CartScreen = ({match}) => {
         </Card>
       </Col>
     </Row>
+    </>
   )
 }
 

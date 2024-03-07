@@ -4,6 +4,8 @@ import {useHistory} from 'react-router-use-history'
 import { Container, Nav, NavDropdown, Navbar } from 'react-bootstrap'
 import {LinkContainer} from 'react-router-bootstrap'
 import { logout } from '../actions/userActions'
+import SearchBox from './SearchBox'
+// import { Route} from 'react-router-dom'
 
 
 const Header = () => {
@@ -24,8 +26,8 @@ const Header = () => {
           <Navbar.Brand >SHOPPIE</Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto">
+        <Navbar.Collapse id="basic-navbar-nav">         
+          <Nav className="ml-auto justify-content-right">
             <LinkContainer to='/cart'>
               <Nav.Link><i className='fas fa-shopping-cart'></i>Cart</Nav.Link>
             </LinkContainer>
@@ -54,6 +56,9 @@ const Header = () => {
             </LinkContainer>
           </NavDropdown>
           )}
+          
+             <SearchBox  />
+          
           </Nav>
         </Navbar.Collapse>
       </Container>

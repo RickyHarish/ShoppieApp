@@ -6,6 +6,7 @@ import CheckoutSteps from '../components/CheckoutSteps'
 import { Link } from 'react-router-dom'
 import { createOrder } from '../actions/orderActions'
 import {useHistory} from 'react-router-use-history'
+import Meta from '../components/Meta'
 
 const PlaceOrderScreen = () => {
     const dispatch = useDispatch()
@@ -49,6 +50,7 @@ const PlaceOrderScreen = () => {
 
   return (
     <>
+    <Meta title='Shipping' />
       <CheckoutSteps step1 step2 step3 step4 />
       <Row>
         <Col md={8}>

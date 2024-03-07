@@ -13,13 +13,12 @@ import {
   createProduct,
 } from '../actions/productActions'
 import { PRODUCT_CREATE_RESET } from '../constants/productConstants'
+import Meta from '../components/Meta'
 
 const ProductListScreen = () => {
   const history = useHistory()
   const {pageNumber} = useParams()
   const currentPageNumber = pageNumber? parseInt(pageNumber):1
-
-  // const pageNumber = match.params.pageNumber || 1
 
   const dispatch = useDispatch()
 
@@ -80,6 +79,7 @@ const ProductListScreen = () => {
 
   return (
     <>
+    <Meta title='Products List' />
       <Row className='align-items-center'>
         <Col>
           <h1>Products</h1>

@@ -9,6 +9,7 @@ import Loader from '../components/Loader'
 import { getUserDetails, updateUser} from '../actions/userActions'
 import FormContainer from '../components/FormContainer'
 import { USER_UPDATE_RESET } from '../constants/userConstants'
+import Meta from '../components/Meta'
 
 const UserEditScreen = () => {
     const {id} = useParams()
@@ -56,6 +57,7 @@ const UserEditScreen = () => {
 
   return (
     <>
+    <Meta title='Edit Your Details' />
     <Link to='/admin/userlist' className='btn btn-light my-3'>
         Go Back
     </Link>
